@@ -33,9 +33,21 @@ mkdir -p /output
 arp-scan --interface=eth0 --localnet > /output/scan.txt
 ```
 
-<h2>Lastly, Make it Executable</h2>
+<h2>Make <code>entrypoint.sh</code> Executable</h2>
 
 ```
 chmod +x entrypoint.sh
 ```
 
+<h2>Make the Docker Image</h2>
+
+Upon completion of all above steps you want to then build the Docker image. Note this command is to be just ran within the project folder you orginally created in the beginning of this section. 
+
+```
+docker build -t arp-tracker .
+```
+If you would like to verify that the image was created; in the terminal simply code
+```
+docker images
+```
+If not a root user place <code>sudo</code> in front of the command. 
